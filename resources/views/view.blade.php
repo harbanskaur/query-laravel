@@ -27,7 +27,11 @@
                 <td><a href="{{route('edit',$item->id)}}">edit</a></td> 
                 <td><a href="{{route('data',$item->id)}}">delete</a></td>
             </tr>
+            
         @endforeach
+            <tr>
+              <td colspan="7">{{$data->links()}}</td>
+            </tr>
     </table><center>
 </body>
 </html>

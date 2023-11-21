@@ -27,7 +27,7 @@ class IndexController extends Controller
 
     public function view()
     {
-        $data=DB::table('data')->get();
+        $data=DB::table('data')->simplePaginate(3);
         // return redirect('form',compact('data'));
         return view ('view',compact('data'));
     }
