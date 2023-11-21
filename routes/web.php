@@ -24,6 +24,8 @@ Route::get('/add',[MainController::class,'add']);
 Route::get('/update',[MainController::class,'update']);
 Route::get('/delete/{id}',[MainController::class,'delete'])->name('delete');
 
-Route::get('/display',[IndexController::class,'display']);
+Route::get('/display',[IndexController::class,'display'])->name('display');
 Route::post('/insert',[IndexController::class,'insert'])->name('insert');
 Route::get('/view',[IndexController::class,'view'])->name('view');
+Route::get('/edit/{id}',[IndexController::class,'showdata'])->name('edit');
+Route::get('/deletedata/{id}',[IndexController::class,'deletedata'])->name('deletedata');

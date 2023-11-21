@@ -14,7 +14,7 @@ class IndexController extends Controller
 
     public function insert(Request $request)
     {
-        DB::table('data')
+        $data = DB::table('data')
             ->insert([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -22,13 +22,30 @@ class IndexController extends Controller
                 'city' => $request->city,
             ]);
 
-        return view('/view');
+        return redirect('/view');//->with('data',$data);
     }
 
     public function view()
     {
-        // $data=DB::table('data')->get();
+         $data=DB::table('data')->get();
         // return redirect('form',compact('data'));
-        return view ('view');
+        return view ('view',compact('data'));
+    }
+
+    // public function showdata(string $id)
+    // {
+    //     $data = DB::table('data')
+    //             ->where('id',$id)
+    //             ->first();
+    //     return redirect ('display')->with('data',$data);
+    // }
+
+    public function delete(string $id)
+    {
+        DB::table('data')
+        ->where('id',$id)
+        ->delete();
+            
+        return redirect('/display');
     }
 }
