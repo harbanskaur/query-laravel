@@ -25,7 +25,7 @@
                 <td>{{$item->age}}</td>
                 <td>{{$item->city}}</td>
                 <td><a href="{{route('edit',$item->id)}}">edit</a></td> 
-                <td><a href="{{route('delete',$item->id)}}">delete</a></td>
+                <td><a href="{{route('data',$item->id)}}">delete</a></td>
             </tr>
         @endforeach
     </table><center>
