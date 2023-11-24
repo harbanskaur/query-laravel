@@ -33,7 +33,18 @@ Route::get('/edit/{id}',[IndexController::class,'showdata'])->name('edit');
 Route::post('/update/{id}',[IndexController::class,'update'])->name('update');
 Route::get('/deletedata/{id}',[IndexController::class,'deletedata'])->name('data');
 //LANG 
-Route::get('/{lang?}',function ($lang = null){
-    App::setLocale($lang);//it sets the language 
-    return view ('lang');
+// Route::get('/{lang?}',function ($lang = null){
+//     App::setLocale($lang);//it sets the language 
+//     return view ('lang');
+// });
+//LOGGING 
+Route::get('/log',function (){
+  
+    // \Log::info('this is my testing log ');
+    \Log::Channel('customlog')->info('this is my custom log');
+    dd("done");
+
 });
+// Route::fallback(function (){
+//     return 'hi';
+// });
