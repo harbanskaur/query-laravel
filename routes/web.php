@@ -32,7 +32,21 @@ Route::get('/view',[IndexController::class,'view'])->name('view');
 Route::get('/edit/{id}',[IndexController::class,'showdata'])->name('edit');
 Route::post('/update/{id}',[IndexController::class,'update'])->name('update');
 Route::get('/deletedata/{id}',[IndexController::class,'deletedata'])->name('data');
-//LANG 
+//JOINS
+
+
+
+
+
+
+
+
+
+
+
+
+
+//localization
 // Route::get('/{lang?}',function ($lang = null){
 //     App::setLocale($lang);//it sets the language 
 //     return view ('lang');
@@ -48,3 +62,4 @@ Route::get('/log',function (){
 // Route::fallback(function (){
 //     return 'hi';
 // });
+///error handling 
